@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js-ecma | 二次元中十指灵动</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ECMA基础知识回顾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js-ecma">
+<meta property="og:url" content="http://sundyfuther.github.io/2015/11/28/js-ecma1/index.html">
+<meta property="og:site_name" content="二次元中十指灵动">
+<meta property="og:description" content="ECMA基础知识回顾">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2016-03-02T01:10:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js-ecma">
+<meta name="twitter:description" content="ECMA基础知识回顾">
+  
+    <link rel="alternative" href="/atom.xml" title="二次元中十指灵动" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="images/cxj.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Sundyfuther</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">活跃的脑细胞</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/guestbook">留言板</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2252682685/home" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.75team.com/">奇舞团</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://cdc.tencent.com/">腾讯CDC</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fex.baidu.com/">百度FEX</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ued.taobao.org/blog/">淘宝UED</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://taobaofed.org/">淘宝FED</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ued.sina.com/">新浪UED</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.doyoe.com/">css探索</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://sh5054.github.io/">孙浩</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://crerich.github.io/">程华</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://tyl1002353363.github.io/">谭于磊</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://wj1213180604.github.io/">王娟</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">百年后，哥又帅醒了</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Sundyfuther</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="images/cxj.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Sundyfuther</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">活跃的脑细胞</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/guestbook">留言板</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2252682685/home" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js-ecma1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/28/js-ecma1/" class="article-date">
+  	<time datetime="2015-11-28T09:54:23.000Z" itemprop="datePublished">2015-11-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js-ecma
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ECMA基础知识回顾"><a href="#ECMA基础知识回顾" class="headerlink" title="ECMA基础知识回顾"></a><h3 style="color:red">ECMA基础知识回顾</h3></h2><a id="more"></a>
+<p><strong>js的基础含义</strong></p>
+<p>javascript : script脚本语言，继承在浏览器中的一种语言</p>
+<p><strong>js分为三大模块：</strong></p>
+<p>① ECMA核心语法 主要内容有 语法，类型，语句，关键字，保留字，操作符，对象…………几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 </p>
+<p>② DOM 英文全称 Document(文档) Object(对象) Model(模型) 借助DOM.APL可以轻松自如的删除，添加，替换和修改任何节点  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;有一些兼容性问题；</p>
+<p>③ BOM 浏览器对象模型；仅用来作用于窗口的指令，给了JS操作浏览器的能力；window；有许多兼容性问题</p>
+<p>1、js的引入方法</p>
+<pre><code>外部引入&lt;script type=&quot;text/javascript&quot; src=&quot;路径&quot;&gt;&lt;/script&gt;
+</code></pre><p>此种方法用在body的里面，标签的最后，主要是因为html文档是解释执行，从上往下。有效避免在JS文件里节点取不到，这跟引用框架JS文件一般放在head里的原理如出一辙</p>
+<pre><code>内部引入&lt;script&gt; ……include statements …… &lt;/script&gt; （不常用）
+标签内使用：（不常用）
+</code></pre><p>2、script标签元素</p>
+<pre><code>属性：src type defer async
+
+    src 和 type 只是在引入时用到
+
+    noscript用来判断浏览器是否支持 js 或者是否禁用 js
+
+    defer 延迟属性只对外部引用的js有效果，含义为立即加载js，但是文档加载完成之前不执行。
+
+    async属性 只对外部引入的js有效果，异步加载js没有顺序可言（ 不推荐 ）
+</code></pre><p>3、语法和标识符</p>
+<pre><code>① 完全对大小写敏感，所以一定要区分大小写————驼峰式命名
+
+② 标识符 指变量，函数，属性，或参数的名字
+</code></pre><p>4、有特定作用的关键字不能作为标识符，也有一部分保留字尽量不要作为标识符！</p>
+<p>5、变量</p>
+<pre><code>var message // var 是关键字，用来声明和保存变量用的
+
+变量： 用来保存信息和数据的，声明的变量没有初始化，那么该变量的默认值是undefined
+
+        变量是有作用域的，var声明的变量是局部变量，没有var声明的叫全局变量。
+</code></pre><p>6、js最大的特点</p>
+<pre><code>单线程运行
+</code></pre><p>7、获取节点：</p>
+<pre><code>document.getElementById(&quot;&quot;)
+
+document.getElementByTagName(&quot;&quot;) 支持IE678及标准浏览器还有移动端，不太好用，
+
+document.getElementByClassName(&quot;&quot;)不支持IE678 至少IE9以上
+
+document.querySelector(&quot;&quot;)
+
+document.querySelectorAll(&quot;&quot;) //不支持IE678 仅支持标准浏览器和移动端，性能好
+</code></pre><p>8、数据类型：</p>
+<p>① String 字符串类型</p>
+<p>② Boolean 布尔类型</p>
+<p>③ Number 数字类型</p>
+<p>④ Null 空类型</p>
+<p>⑤ Undefined undefined空类型</p>
+<pre><code>数组超出长度后返回undefined
+
+当函数没有返回值时的默认返回值是undefined
+
+变量声明未定义时 其值为undefined
+</code></pre><p>⑥ Object 对象类型  值为对象或空 null</p>
+<p>1、数据类型的检测 typeof</p>
+<p>2、Array object null function 的关系和区别</p>
+<p>3、什么是函数，参数，属性</p>
+<p>4、函数和对象的关系</p>
+<p>只有函数才可能定义块级作用域 或称为局部作用域</p>
+<p>声明函数使用function关键字+函数名声明的函数</p>
+<pre><code>function text(){
+
+}
+</code></pre><p>声明函数    就是使用function关键字  有函数名 没有赋值给一个函数</p>
+<p>函数表达式  就是使用function关键字  没有函数名  赋值给一个变量的函数</p>
+<p>匿名函数    就是使用function关键字  但是没有函数名的函数 也没有赋值给一个变量 用来保护变量，因为作用域不一样，全局变量和局部变量不冲突！用来赋给事件，作为事件触发的</p>
+<pre><code>var i = function(){
+    此种写法称为函数表达式
+}
+</code></pre><p>一个是声明变量（函数） 一个是匿名函数  函数表达式</p>
+<p>三者的区别</p>
+<pre><code>function text(){
+    var j = function(){
+        console.log(&apos;123&apos;)
+    } //()这样表示立即执行
+    function(){
+        console.log(&apos;456&apos;)
+    } //()这样会报错 ，仔细比较两者的区别
+}
+
+text();
+
+函数表达式可以使用（）操作符立即执行；函数声明不可以
+
+var j ＝ function（）｛
+     console.log（‘哈哈哈’）；
+｝
+
+也可以（function（）｛｝这个括号用来把函数变成一个函数表达式）（立即调用）//这样的调用方法简写成（）（）；
+
+全局变量可以在任何地方访问
+
+函数内的变量，对外部是不可见的
+
+函数内部可以访问外部函数的变量
+
+    （function(num){
+        var i = num
+        function aaa(){
+            console.log(i);
+        }                                内部函数可以访问上层函数的变量
+        console.log(i);
+        aaa();
+    }）(2);
+
+    for(var i = 0 ; i&lt; 10 ; i++){
+        (function(i){
+            function aaa(){
+                console.log(i);
+            }
+        })(i);
+    }
+</code></pre><p>举例：</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head lang = &quot;en&quot;&gt;
+    &lt;meta charset=&quot;utf-8&quot;/&gt;
+    &lt;title&gt;逻辑与规则&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/js99.css&quot;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;0&lt;/li&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+        &lt;li&gt;5&lt;/li&gt;
+        &lt;li&gt;6&lt;/li&gt;
+        &lt;li&gt;7&lt;/li&gt;
+        &lt;li&gt;8&lt;/li&gt;
+        &lt;li&gt;9&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;js/js99.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>相关javascript代码</p>
+<pre><code>var arr = document.querySelectorAll(&quot;ul li&quot;);
+for (var i = 0; i &lt; arr.length; i++) {
+    (function(i){
+        arr[i].onclick = function(){
+            console.log(i);
+        }
+    })(i)
+};
+</code></pre><p>其结果等同于下面js代码</p>
+<pre><code>var arr = document.querySelectorAll(&quot;ul li&quot;);
+for (var i = 0; i &lt; arr.length; i++) {
+        arr[i].index=i ;
+        arr[i].onclick = function(){
+            console.log(this.index);
+        }
+};
+</code></pre><p>1、javascript预解析和作用域</p>
+<p>2、执行运算符（）的运用</p>
+<p>3、return的用法  函数参数的解析</p>
+<p>全局</p>
+<pre><code>function fn(){
+    console.log(&apos;111&apos;)
+}
+console.log(fn()); 运行结果：111，undefined 每一个函数都有一个默认返回值undefined
+</code></pre><p>最后利用今天所学知识做了一个关于计算加减乘除的方法：（如下）</p>
+<pre><code>function computer(){
+
+    var lth = arguments.length-1 ;
+
+    //console.log(lth);
+
+    if (arguments[lth]==&apos;+&apos;) {
+
+        for (var i = 1 ; i &lt; arguments.length-1 ; i++) {
+
+            arguments[0] += arguments[i] ;
+
+        }
+
+        console.log(arguments[0]);
+
+    }else if( arguments[lth] == &apos;-&apos;){
+
+        for (var i = 1; i &lt; arguments.length-1; i++) {
+
+            arguments[0] -= arguments[i] ;
+
+        }
+
+        console.log(arguments[0]);
+
+    }else if (arguments[lth] == &apos;*&apos;) {
+
+        for (var i = 1; i &lt; arguments.length-1 ; i++) {
+
+            arguments[0] *= arguments[i] ;
+
+        }
+        console.log(arguments[0]);
+
+    }else if (
+
+
+
+    arguments[lth] == &apos;/&apos;) {
+
+        for (var i = 1; i &lt; arguments.length-1 ; i++) {
+
+            arguments[0] /= arguments[i] ;
+
+        }
+
+        console.log(arguments[0]);
+
+    }
+
+}
+
+computer(1,2,3,5,6,8,&apos;+&apos;);
+
+computer(15,2,2,3,5,3,&apos;-&apos;);
+
+computer(2,5,2,5,2,5,&apos;*&apos;);
+
+computer(200,2,2,5,&apos;/&apos;);
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/28/cssNO1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于css
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/28/js综合面试题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS综合面试题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js-ecma1" data-title="js-ecma" data-url="http://sundyfuther.github.io/2015/11/28/js-ecma1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Sundyfuther
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

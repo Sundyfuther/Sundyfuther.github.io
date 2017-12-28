@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>二次元中十指灵动</title>
+  <icon>https://www.gravatar.com/avatar/e38de063db39353725432a9f02b82623</icon>
+  <subtitle>活跃的脑细胞</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://sundyfuther.github.io/"/>
+  <updated>2016-04-06T15:17:06.000Z</updated>
+  <id>http://sundyfuther.github.io/</id>
+  
+  <author>
+    <name>Sundyfuther</name>
+    <email>cxj8976@hotmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gulp简单使用指南</title>
+    <link href="http://sundyfuther.github.io/2016/04/06/gulp%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://sundyfuther.github.io/2016/04/06/gulp简单使用指南/</id>
+    <published>2016-04-06T13:56:02.000Z</published>
+    <updated>2016-04-06T15:17:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#gulp 入门使用<br><a id="more"></a></p><p>##首先  环境搭建</p><p><strong>gulp的安装</strong></p><p>首先确保你已经正确安装了nodejs环境。然后以全局方式安装gulp：</p><pre><code>npm install -g gulp</code></pre><p>全局安装gulp后，还需要在每个要使用gulp的项目中都单独安装一次。把目录切换到你的项目文件夹中，然后在命令行中执行：</p><pre><code>npm install gulp</code></pre><p>如果想在安装的时候把gulp写进项目package.json文件的依赖中，则可以加上–save-dev：</p><pre><code>npm install --save-dev gulp</code></pre><p>第一步：创建项目文件夹 </p><pre><code>mkdir product name </code></pre><p>第二步：初始化，创建package.json文件</p><pre><code>npm init</code></pre><p>第三步：手动在项目文件夹中创建gulpfile.js文件</p><p>第四步：安装依赖模块儿，拿几个常用的模块儿来举例吧</p><p>在package.json文件下方复制以下代码</p><pre><code> &quot;dependencies&quot;: {&quot;gulp&quot;: &quot;^3.9.1&quot;,&quot;gulp-htmlmin&quot;: &quot;^1.3.0&quot;,&quot;gulp-less&quot;: &quot;^3.0.5&quot;,&quot;gulp-minify-css&quot;: &quot;^1.2.4&quot;,&quot;gulp-uglify&quot;: &quot;^1.5.3&quot; }</code></pre><p>然后在控制台输入以下代码来安装这些依赖模块儿</p><pre><code>npm install</code></pre><p>第五步：手动创建项目目录，一个最简单的项目目录其结构应该是这样的</p><p><img src="http://7xosew.com1.z0.glb.clouddn.com/gulp.png" alt="gulp基本目录"></p><p>第六步：在主文件gulpfile.js中创建任务执行任务</p><p>1⃣️引入所需模块儿，简明举几个常用栗子</p><pre><code>var gulp = require(&apos;gulp&apos;);var uglify = require(&apos;gulp-uglify&apos;);var less = require(&apos;gulp-less&apos;);var mincss = require(&apos;gulp-minify-css&apos;);var minhtml = require(&apos;gulp-htmlmin&apos;);</code></pre><p>2⃣️gulp执行所有的任务</p><pre><code>gulp.task(&apos;default&apos;,[&apos;uglify&apos;,&apos;less&apos;])</code></pre><p>3⃣️gulp执行分步的任务，就是第1⃣️步里的数组里面的任务</p><pre><code>gulp.task(&apos;uglify&apos;,function(){    gulp.src(&apos;./src/js/*js&apos;)    .pipe(uglify())    .pipe(gulp.dest(&apos;./dist/js&apos;))})</code></pre><p>上面的代码作用就是找到js源文件，压缩文件，并导入最终上线的文件夹dist中</p><pre><code>gulp.task(&apos;less&apos;,function(){    gulp.src(&apos;./src/css/*.less&apos;)    .pipe(less())    .pipe(mincss())    .pipe(gulp.dest(&apos;./dist/css&apos;))})</code></pre><p>上面的代码作用是找到css文件，压缩文件，并导入最终上线的文件夹dist中</p><p>4⃣️可以执行的任务还有很多，这里不再一一举例，下面看一下怎样监听源文件的变化，进而省去每写一步就要执行gulp命令的麻烦，实现自动化</p><pre><code>gulp.task(&apos;watch&apos;,function(){    gulp.watch([&apos;./src/css/*less&apos;,&apos;./src/js/*js&apos;],function(){        gulp.run(&apos;less&apos;);        gulp.run(&apos;uglify&apos;);    })})</code></pre><p>简单的一个使用教程先到这里</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#gulp 入门使用&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js之闭包</title>
+    <link href="http://sundyfuther.github.io/2016/03/01/js%E4%B9%8B%E9%97%AD%E5%8C%85/"/>
+    <id>http://sundyfuther.github.io/2016/03/01/js之闭包/</id>
+    <published>2016-03-01T12:18:49.000Z</published>
+    <updated>2016-03-01T12:18:48.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js作用域</title>
+    <link href="http://sundyfuther.github.io/2016/03/01/js%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://sundyfuther.github.io/2016/03/01/js作用域/</id>
+    <published>2016-03-01T12:18:12.000Z</published>
+    <updated>2016-03-01T12:18:12.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js中的this指针</title>
+    <link href="http://sundyfuther.github.io/2016/03/01/js%E4%B8%AD%E7%9A%84this%E6%8C%87%E9%92%88/"/>
+    <id>http://sundyfuther.github.io/2016/03/01/js中的this指针/</id>
+    <published>2016-03-01T12:17:28.000Z</published>
+    <updated>2016-03-01T12:17:28.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>简谈js数据类型</title>
+    <link href="http://sundyfuther.github.io/2016/03/01/%E7%AE%80%E8%B0%88js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://sundyfuther.github.io/2016/03/01/简谈js数据类型/</id>
+    <published>2016-03-01T12:16:47.000Z</published>
+    <updated>2016-04-08T08:25:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 style="color:red">js数据类型</h3><p>js的数据类型分为两大类：原始类型和对象类型（也成为引用类型）</p><a id="more"></a><p>原始类型包括：</p><p>Number :  Number(这里可以是任何类型)</p><pre><code>①整数 可以通过10进制 8进制 16进制表示②浮点数 该数值必须包含一个小数点，小数点后面必须有一位数字，如果小数点后只有0，自动转换成整数浮点数占据的空间内存是内存的两倍，极大极小的数字会用e科学表示法。③NaN 1、即非数值，是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数，未返回数值的情况。比如            任何数值除以0，本是不符合规范的，js里，这样的操作返回NaN（但是实际上，只有0除以0时返回NaN，其他则无穷值）。2、NaN有两个不同寻常的特点：任何涉及NaN的操作都会返回NaN，NaN值与任何值都不相等，包括本身。3、isNaN()函数，这个函数可以判断，传递的参数是否“不是数值”这里涉及数值转换的问题，例如“10”这个字符串就可以转换为10，但是“blue”这个字符串则无法转换为数字，所以isNaN(&quot;blue&quot;)==true</code></pre><p>String</p><pre><code>在js里面既可以用 &apos;&apos; 也可以用 “” 来表示</code></pre><p>Boolean : true 和 false</p><pre><code>1.Boolean()方法 可以转换其他数据类型为布尔值2.布尔值最有用的地方就是在if(true or false){}else{} ,很多时候括号里面会做一些隐式的类型转换，转换为true  or  false</code></pre><p>Null</p><pre><code>只有一个值为null，表示一个空值，对null进行typeof预算，结果返回字符串&apos;object&apos;,犀牛书上有这样一段解释：null也可以看作是一个特殊的对象值，含义是“非对象”。但实际上，通常认为null是TA自有类型的唯一一个成员，它可以表示数字，字符串，对象是无值的。</code></pre><p>Undefined</p><pre><code>  undefined常见的几种情况           在使用var声明变量，但未对其加以初始化时，这个变量的类型就是undefined，且其默认初始化值为undefined  对未声明与初始化的变量，直接使用，那么这个变量的类型也是undefined，但是没有默认初始化值。  type test;//undefined  直接调用就会报错 </code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 style=&quot;color:red&quot;&gt;js数据类型&lt;/h3&gt;
+
+&lt;p&gt;js的数据类型分为两大类：原始类型和对象类型（也成为引用类型）&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>表单元素</title>
+    <link href="http://sundyfuther.github.io/2016/02/25/%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://sundyfuther.github.io/2016/02/25/表单元素详解/</id>
+    <published>2016-02-25T11:53:56.000Z</published>
+    <updated>2016-02-26T01:32:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong><h1 style="color:red">表单元素详解</h1></strong></p><a id="more"></a><pre><code>&lt;input type=&quot;&quot; value=&quot;&quot; name=&quot;&quot;/&gt; 输入框 text password当type=&quot;text&quot;时，输入框为文本输入框 当type=&quot;password&quot;时, 输入框为密码输入框 name 为文本框命名，以备后台程序ASP 、PHP使用value 为文本输入框设置默认值。(一般起到提示作用) &lt;input type=&quot;text&quot; name=&quot;XX.php&quot; value=&quot;我的type是text&quot;/&gt;&lt;input type=&quot;password&quot; name=&quot;XX.php&quot; value=&quot;password&quot;/&gt;这两行代码显示如下：</code></pre><p><input type="text" name="XX.php" value="我的type是text"></p><input type="password" name="XX.php" value="password"><pre><code>单选框 复选框 radio checkbox当type=&quot;radio&quot;时，控件为单选框当type=&quot;checkbox&quot;时，控件为复选框value 提交数据到服务器的值（后台程序PHP使用）name 为控件命名，以备后台程序ASP、PHP使用checked 当设置checked 或 checked=&quot;checked&quot;时，该选项被默认选中注意：同一组的单选按钮，name取值一定要一致，这样同一组的单选按钮才可以起到单选的作用&lt;input type=&quot;radio&quot; name=&quot;only.php&quot; value=&quot;哈哈&quot; checked/&gt;&lt;input type=&quot;radio&quot; name=&quot;only.php&quot; value=&quot;哈哈&quot; checked/&gt;&lt;input type=&quot;radio&quot; name=&quot;only.php&quot; value=&quot;哈哈&quot; checked/&gt;&lt;input type=&quot;checkbox&quot; name=&quot;many.php&quot; value=&quot;哈哈&quot; checked/&gt;这四行代码显示如下：</code></pre><p><input type="radio" name=""only.php"" value="哈哈" checked></p><p><input type="radio" name=""only.php"" value="哈哈" checked></p><p><input type="radio" name=""only.php"" value="哈哈" checked></p><input type="checkbox" name=""many.php"" value="哈哈" checked><pre><code>&lt;input type=&quot;button&quot;/&gt;&lt;input type=&quot;submit&quot;/&gt;&lt;input type=&quot;reset&quot;/&gt;&lt;input type=&quot;hidden&quot;/&gt;</code></pre><p><input type="button"></p><p><input type="submit"></p><p><input type="reset"></p><input type="hidden"><pre><code>&lt;label&gt;&lt;/label&gt; &lt;!--为 input 元素定义标注（标记）label元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上标签的 for 属性应当与相关元素的 id 属性相同，for属性可把 label 绑定到另外一个元素。请把 &quot;for&quot; 属性的值设置为 相关元素的 id 属性的值例如：&lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;     &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;male&quot; /&gt; 显示如下</code></pre><p><label for="male">Male</label></p><input type="radio" name="sex" id="male"> <pre><code>textarea 文本域cols属性 ：多行输入域的列数rows ：多行输入域的行数&lt;textarea rows=&quot;2&quot; cols=&quot;8&quot;&gt;&lt;/textarea&gt;显示如下：</code></pre><textarea rows="2" cols="8"></textarea><pre><code>&lt;select&gt;&lt;/select&gt; &lt;!--下拉列表框--&gt;&lt;!--multiple属性 可以实现多选功能 windows系统要按住CTRL键，Mac要按住commond键--&gt;&lt;option&gt;&lt;/option&gt; &lt;!--下拉选项--&gt;</code></pre><select><br>    <option>我</option><option><br>    </option><option>爱</option><option><br>    </option><option>我</option><option><br>    </option><option>家</option><option><br></option></select><br><select multiple><br>    <option>我</option><option><br>    </option><option>爱</option><option><br>    </option><option>我</option><option><br>    </option><option>家</option><option><br></option></select>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;h1 style=&quot;color:red&quot;&gt;表单元素详解&lt;/h1&gt;&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>meta元素详解</title>
+    <link href="http://sundyfuther.github.io/2016/02/25/meta%E5%85%83%E7%B4%A0%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://sundyfuther.github.io/2016/02/25/meta元素详解/</id>
+    <published>2016-02-25T11:26:32.000Z</published>
+    <updated>2016-02-25T12:19:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 style="color:red;">meta元素详解</h1><a id="more"></a><pre><code>&lt;meta charset=&quot;utf-8&quot;/&gt; </code></pre><p>meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。charset为申明编码解析格式</p><pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;  </code></pre><p>优先使用 IE 最新版本和 Chrome</p><pre><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt;</code></pre><p>国内浏览器很多都是双内核（webkit和Trident），webkit内核高速浏览，IE内核兼容网页和旧版网站。而添加meta标签的网站可以控制浏览器选择何种内核渲染。</p><pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;your tags，&quot; /&gt; </code></pre><p>页面关键字</p><pre><code>&lt;meta name=&quot;description&quot; content=&quot;120｜150 words&quot; /&gt; </code></pre><p>页面描述</p><pre><code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt; </code></pre><p>搜索引擎的搜索方式：all：文件将被检索，且页面上的链接可以被查询；</p><p>none：文件将不被检索，且页面上的链接不可以被查询；</p><p>index：文件将被检索；</p><p>follow：页面上的链接可以被查询；</p><p>noindex：文件将不被检索；</p><p>nofollow：页面上的链接不可以被查询。</p><pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;</code></pre><p>页面重新定向和刷新  content内的数字代表时间（秒），既多少时间后刷新，如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚</p><pre><code>&lt;meta name=&quot;author&quot; content=&quot;author name&quot; /&gt;  </code></pre><p>网页作者信息</p><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no&quot;/&gt; </code></pre><p>移动设备</p><pre><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt; </code></pre><p>WebApp全屏模式：伪装app，离线应用。</p><pre><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot;content=&quot;black-translucent&quot; /&gt; </code></pre><p>content的值为default | black| black-translucent 隐藏状态栏/设置状态栏颜色：只有在开启WebApp全屏模式时才生效</p><pre><code>&lt;meta name=&quot;apple-mobile-web-app-title&quot;content=&quot;标题&quot;&gt; </code></pre><p>截至目前仅支持苹果手机，安卓暂时还没有此类功能，content的值为default | black | black-translucent</p><pre><code>&lt;meta content=&quot;telephone=no&quot;name=&quot;format-detection&quot; /&gt; </code></pre><p>忽略数字自动识别为电话号码</p><pre><code>&lt;meta content=&quot;email=no&quot;name=&quot;format-detection&quot; /&gt; </code></pre><p>忽略自动识别邮箱</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 style=&quot;color:red;&quot;&gt;meta元素详解&lt;/h1&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于offsetWidth,clientWidth,scrollWidth及相应的height属性</title>
+    <link href="http://sundyfuther.github.io/2016/01/17/%E5%85%B3%E4%BA%8EoffsetWidth-clientWidth-scrollWidth%E5%8F%8A%E7%9B%B8%E5%BA%94%E7%9A%84height%E5%B1%9E%E6%80%A7/"/>
+    <id>http://sundyfuther.github.io/2016/01/17/关于offsetWidth-clientWidth-scrollWidth及相应的height属性/</id>
+    <published>2016-01-17T08:37:01.000Z</published>
+    <updated>2016-01-19T13:09:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#用js源码制作一个通用的TOP按钮</p><p>##效果：超过一屏显示按钮，平滑，美观的滑动到顶部，且按钮消失</p><p>最近迎来了我的第一个上线项目，虽然我做的几个页面都算是比较简单的静态页面再加上一些动态数据加载和交互，可还是发现了不少的问题，其中尤其发现目前对DOM相关的一些属性理解不到位，本着把他搞清楚弄明白的宗旨，这几天都在爬贴找资料，现在就把它总结一下，可能有许多从网上贴的，还有就是关于一些详细的兼容性问题，根据自己的需求加代码，我这里只兼容IE8以上</p><a id="more"></a><p>1.由于其中一个页面较长需要加入TOP按钮， 因此我第一个想到的是利用锚链,可是犹豫做出的效果很生硬，不平滑，所以被我果断放弃了。</p><p>2.接下来goole了一下，大部分都是用jQuery做出来的，可是我们这个项目的类库都是我们自己写的一些微型类库，没有涉及到这一块儿，因此我也只能自己想办法用JS源码解决了。</p><p>3.html里面给个top按钮，你用input也行，普通的div或span也好，我是给了一个</p><pre><code>&lt;div id=&quot;backTop&quot;&gt;&lt;/div&gt;</code></pre><p>4.样式问题我这里就不赘述了,至于你想用图片做的很美观，还是用hover做的简单炫丽都随你了</p><p>5.接下来是正题，是我们主要功能实现部分，现在先把一些涉及的知识点给罗列一下（可能只是用到一部分，但为了能弄明白，还是对比理解一下）：</p><p><img src="http://7xosew.com1.z0.glb.clouddn.com/dom%E5%85%83%E7%B4%A0%E7%9B%B8%E5%85%B3%E9%AB%98%E5%BA%A6.jpg" alt="相关图解"></p><center>图一</center><p>①元素的offsetWidth/offsetHeight对应的是盒模型宽度和高度，这两个值跟我们在浏览器审查元素中得到的值是一致的，包含了border，和padding以及width/height；</p><p>②clientWidth/clientHeight对应的是除去border后的那部分区域的宽度和高度，不包含滚动条的宽度，只包含content和padding；</p><p>③scrollWidth/scrollHeight对应的滚动区域的宽度和高度，但是不包含滚动条的宽度，滚动区域是由padding和content组成。在谷歌下，如果内容高度小于可视区高度，则scrollHeight等于可视区高度</p><p>④window.innerWidth/window.innerHeight 在IE下描述为document.documentElement.clientWidth/Height(在标准浏览器下，这种写法通用)—-&gt;&gt;窗口的可视区域</p><p>⑤scrollTop/scrollLeft在IE下描述为document.documentElement.scrollTop/Left在标准浏览器下为window.pageXOffset/window.pageYoffset</p><p>⑥offsetParent:离当前节点最近的具有定位属性的祖先节点，若祖先节点没有定位属性，offsetParent以body为准，若当前节点有display:none;属性，则offsetParent为null</p><p>⑦offsetTop/offsetLeft 当前节点到离自己最近的offsetParent的距离</p><p>下面是验证代码：（测试环境chrome）</p><p>html代码块儿</p><pre><code>&lt;div id=&quot;box&quot;&gt;    &lt;div id=&quot;testbox&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre><p>css代码块儿</p><pre><code>body{    margin: 0;}#box{    width: 400px;    height: 250px;    position: relative;    padding:20px;    margin: 50px;    background-color: lightgreen;    border:30px solid red;}#testbox{    width: 200px;    height: 100px;    padding: 40px 30px 10px 20px;    margin: 20px 10px 30px 40px;    position: absolute;    top: 30px;    left:60px;    background-color: lightblue;    border:20px solid yellow;}</code></pre><p>js代码块儿</p><pre><code>var box = document.getElementById(&apos;box&apos;);var testBox = document.getElementById(&apos;testbox&apos;);console.log(window.innerWidth,window.innerHeight); //1398,378console.log(document.documentElement.clientWidth,document.documentElement.clientHeight); //1398,378console.log(document.documentElement.scrollTop,document.documentElement.scrollLeft);//0,0console.log(box.offsetWidth,box.offsetHeight);//500,350console.log(testBox.offsetWidth,testBox.offsetHeight);//290,190console.log(box.scrollWidth,box.scrollHeight);//440,290console.log(testBox.scrollWidth,testBox.scrollHeight);//250,150console.log(box.clientWidth,box.clientHeight);//440,290console.log(testBox.clientWidth,testBox.clientHeight);//250,150console.log(box.scrollTop,box.scrollLeft);//0,0console.log(testBox.scrollTop,testBox.scrollLeft);//0,0console.log(box.offsetTop,box.offsetLeft);//50,50console.log(testBox.offsetTop,testBox.offsetLeft);//50,100console.log(box.offsetParent,testBox.offsetParent);//&lt;body&gt;&lt;/body&gt;,&lt;div id=&quot;box&quot;&gt;…&lt;/div&gt;</code></pre><p>测试结果图示：</p><p><img src="http://7xosew.com1.z0.glb.clouddn.com/box.png" alt="相关图解"></p><center>图二box的盒模型</center><br><img src="http://7xosew.com1.z0.glb.clouddn.com/textBox.png" alt="相关图解"><br><center>图三textBox的盒模型</center><p>##涉及的定时器等有关知识点回头陆续更新，下面是有关JS源码解决TOP按钮的代码及注释</p><pre><code>var oBtn = document.getElementById(&apos;backtop&apos;); //标签获取     这个标签是你获取自己的document文档中的top标签下面的根据自己需要改动也可以完全一样这个随你自由了var clientHeight = document.documentElement.clientHeight; //获取页面可视区高度var timer = null;var isTop = true;    //初始值即滚动条在顶端时为truewindow.onscroll = function () {  //滚动条滚动触发    var osTop = document.documentElement.scrollTop || document.body.scrollTop;//获取滚动条距离顶部的距离             if (osTop &gt;= clientHeight) {        oBtn.style.opacity = 1;  //大于一屏让top按钮显示出来    }    else{        oBtn.style.opacity = 0;  //小于一屏让top按钮消失    }    if (!isTop) {        clearInterval(timer);  //如果    }    isTop = false;  //滚动触发时istop变为false}oBtn.onclick = function (){   //事件绑定    timer = setInterval(function(){  //设置定时器        var osTop = document.documentElement.scrollTop || document.body.scrollTop;//获取滚动条距离顶部的距离         var ispeed = Math.floor(-osTop / 5); //向下取整 每次回到顶端都留有4px，原因未知        document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;  //使滚动由快变慢        isTop = true;  //点击完之后回到顶端 istop为true            if (osTop == 0) {   //每次滚动条到顶部清除定时器            clearInterval(timer);        }    },30);}</code></pre><p>至此平滑滚动的按钮就这样easy的写出来了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#用js源码制作一个通用的TOP按钮&lt;/p&gt;
+&lt;p&gt;##效果：超过一屏显示按钮，平滑，美观的滑动到顶部，且按钮消失&lt;/p&gt;
+&lt;p&gt;最近迎来了我的第一个上线项目，虽然我做的几个页面都算是比较简单的静态页面再加上一些动态数据加载和交互，可还是发现了不少的问题，其中尤其发现目前对DOM相关的一些属性理解不到位，本着把他搞清楚弄明白的宗旨，这几天都在爬贴找资料，现在就把它总结一下，可能有许多从网上贴的，还有就是关于一些详细的兼容性问题，根据自己的需求加代码，我这里只兼容IE8以上&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>dom第二节</title>
+    <link href="http://sundyfuther.github.io/2015/12/19/dom%E7%AC%AC%E4%BA%8C%E8%8A%82/"/>
+    <id>http://sundyfuther.github.io/2015/12/19/dom第二节/</id>
+    <published>2015-12-19T11:20:18.000Z</published>
+    <updated>2016-01-19T13:14:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>获取属性</p><a id="more"></a><p>getAttribute  获取节点属性</p><p>setAttribute  设置节点属性</p><p>ele.setAttribute(‘style’,’ ‘);</p><p>removeAttribute  移除节点属性 只接收一个参数</p><p>ele.getAttribute(‘属性名’)；</p><p>模仿获取</p><p>下面模仿getAttributes<br>方法实现原理</p><pre><code>function getAt(ele,aa){        var list = ele.attributes;        if(!list){            return null;        }        for(var i = 0;i&lt;list.length;i++){            if(list[i].nodeName==aa){                return list[i].nodeValue;            }        }        return null;}</code></pre><p>hasClass();</p><p>addClass();</p><p>removeClass();</p><p>ele.appendChild(‘’);往容器最后添加子节点</p><p>ele.removeChild(‘’); 删除子节点</p><p>ele.offsetLeft; 对象元素与offsetParent的左边距离；</p><p>ele.offsetTop; 对象元素与offsetParent的上边距离；</p><p>对象的</p><p>ele.offsetParent;离当前节点最近的具有定位属性的祖先节点</p><p>如果所有祖先节点都没有设置定位属性：元素的offsetParent指的是body，当元素style属性的display为none时，offsetParent为null</p><p>ele.offsetWidth;</p><p>ele.offsetHeight;</p><p>ele.clientWidth;</p><p>ele.clientHeight;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;获取属性&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DOM第一节</title>
+    <link href="http://sundyfuther.github.io/2015/12/18/DOM%E7%AC%AC%E4%B8%80%E8%8A%82/"/>
+    <id>http://sundyfuther.github.io/2015/12/18/DOM第一节/</id>
+    <published>2015-12-18T02:56:45.000Z</published>
+    <updated>2016-01-19T13:14:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>获取节点：</p><a id="more"></a><pre><code>document.getElementById(&quot;&quot;)document.getElementByTagName(&quot;&quot;) 支持IE678及标准浏览器还有移动端，不太好用，document.getElementByClassName(&quot;&quot;)不支持IE678 至少IE9以上document.querySelector(&quot;&quot;)document.querySelectorAll(&quot;&quot;) //不支持IE678 仅支持标准浏览器和移动端，性能好</code></pre><p>获取样式</p><p>1.获取行级样式</p><pre><code>div.style.color</code></pre><p>2.获取css样式</p><pre><code>div.getComputedStyle(div,null).border  不支持IEdiv.currentStyle.width; 支持IEfunction getStyle（ele,type）｛    if(window.getComputedStyle){        return window.getComputedStyle(ele,null).getPropertyValue(type)    }else if(ele.currentStyle){        return ele.currentStyle[type]    }｝</code></pre><p>另一种写法：</p><pre><code>var yangshi =ele.currentStyle  ||  window.getComputedStyle(ele,null);return yangshi[type]</code></pre><p>一种方法：</p><pre><code>    var yangshi =ele.currentStyle?ele.currentStyle:window.getComputedStyle(ele,null);return yangshi[type]</code></pre><p>#123</p><p>document.childNodes;子节点，是个集合//</p><p>document.childNodes[i]  或.children//没有text节点，不是标准，可能被取缔</p><p>上面两种方法没有兼容性问题</p><p>firstChild//标准属性</p><p>lastChild//标准属性</p><p>firstElementChild//标准属性，但是IE678不支持，他们只支持firstChild</p><p>lastElementChild//同上</p><p>nextSibling</p><p>nextElementSibling //678不支持</p><p>previousSibling</p><p>previousElementSibling//678不支持</p><p>以上带有element的节点是标准属性，可以过滤掉空的文本节点</p><p>parent</p><p>##节点类型</p><p>attributes获取当前节点的所有属性集合</p><p>0 ===&gt; document 对象节点</p><p>1 ===&gt;元素节点</p><p>2 ===&gt;属性节点</p><p>3 ===&gt;空节点</p><p>8 ===&gt;注释节点</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;获取节点：&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js-ecma3</title>
+    <link href="http://sundyfuther.github.io/2015/12/08/js-ecma3/"/>
+    <id>http://sundyfuther.github.io/2015/12/08/js-ecma3/</id>
+    <published>2015-12-08T11:54:24.000Z</published>
+    <updated>2015-12-08T14:06:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##数组操作方法</p><a id="more"></a><p>join方法</p><pre><code>var arr = [1,2,56 ,5,69,8,4,9];var str = &apos;&apos;;str = arr.join(&apos;/&apos;); //分隔符自己指定,新打出的字符串是分隔符代替了逗号console.log(str);//输出：1/2/56/5/69/8/4/9</code></pre><p>pop方法</p><pre><code>var arr = [1,2,56 ,5,69,8,4,9];    arr2 = arr.pop();//pop方法删除数组最后一个元素并返回删除的最后一个值,如果数组已经为空，则返回undefinedconsole.log(arr2);//输出：9</code></pre><p>shift方法</p><pre><code>var arr = [1,2,56 ,5,69,8,4,9];console.log(arr.shift());//输出：1 类似pop方法，只不过是返回第一个值，两个函数都没有参数</code></pre><p>push方法</p><pre><code>var arr = [1,2,56 ,5,69,8,4,9];console.log(arr.push(&apos;fuck&apos;,&apos;you&apos;,&apos;nani&apos;),arr);//输出：11 [1, 2, 56, 5, 69, 8, 4, 9, &quot;fuck&quot;, &quot;you&quot;, &quot;nani&quot;]返回添加值后的Array长度，并不创建新数组</code></pre><p>sort方法</p><pre><code>var arr = [1,2,56 ,5,69,8,4,9];function fn (a,b) {return a-b||b-a;//a-b输出从小到大的排序，b-a输出从大到小排序}console.log(arr.sort(fn));//输出：[1, 2, 4, 5, 8, 9, 56, 69]参数必须是一个函数,函数可以写在外面，也可以直接匿名函数console.log(arr.sort(fn).reverse())//输出：[69, 56, 9, 8, 5, 4, 2, 1]//反序输出</code></pre><p>slice方法和splice方法</p><pre><code>var arr = [&apos;a&apos;,&apos;b&apos;,2,true,{},6];console.log(arr.slice(-1))// 输出：[6]  当值为负值的话只提取最后一个值，不会对愿数组进行修改var arr2;arr2 = arr.splice(2,4,1,2,&apos;564&apos;)//输出：[2, true, Object, 6] [&quot;a&quot;, &quot;b&quot;, 1, 2, &quot;564&quot;]     (*startposition起始位置,deleteCount删除值的个数,item添加的项目)console.log(arr2,arr)//删除，替换，插入  返回被删除的元素</code></pre><p>forEach方法</p><pre><code>arr.forEach(function(item,index,arr){//第三个参数是原数组，第二个参数是下标，第一个参数是指下标对应的值,对ie678不支持    console.log(item,index,arr);}) //输出下面的列阵：1   0   [1, 2, 56, 5, 69, 8, 4, 9]2   1   [1, 2, 56, 5, 69, 8, 4, 9]56  2   [1, 2, 56, 5, 69, 8, 4, 9]5   3   [1, 2, 56, 5, 69, 8, 4, 9]69  4   [1, 2, 56, 5, 69, 8, 4, 9]8   5   [1, 2, 56, 5, 69, 8, 4, 9]4   6   [1, 2, 56, 5, 69, 8, 4, 9]9   7   [1, 2, 56, 5, 69, 8, 4, 9]</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##数组操作方法&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试题第二篇</title>
+    <link href="http://sundyfuther.github.io/2015/12/03/javascript%E4%B8%80%E4%BA%9B%E8%9B%8B%E7%96%BC%E7%9A%84%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7/"/>
+    <id>http://sundyfuther.github.io/2015/12/03/javascript一些蛋疼的语法特性/</id>
+    <published>2015-12-03T11:17:19.000Z</published>
+    <updated>2016-03-17T11:40:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#javascript一些蛋疼的语法特性</p><p>##昨天晚上，百无聊赖，突然在百度工具栏里输入蛋疼二字，结果度娘引导我走入了这篇文章，看完之后，什么蛋啊节操啊的全都碎了一地，不信你看</p><a id="more"></a><p>成功，唯有积累，没有奇迹</p><p>01.</p><pre><code>(function () {      return typeof arguments;  })();  A. &quot;object&quot;B. &quot;array&quot;C. &quot;arguments&quot;D. &quot;undefined&quot;</code></pre><p>答案：A 注释：arguments本身就是对象，它的proto就是object，第一题感觉还可以是吧，往下看，你就看不到边儿了…………远远的全是坑……</p><p>02.</p><pre><code>var f = function g() {        return 23;    };typeof g();A. &quot;number&quot;B. &quot;undefined&quot;C. &quot;function&quot;D. Eorror</code></pre><p>答案：D 注释：其运行结果为Uncaught ReferenceError: g is not defined 上面的是一个函数表达式，我们是不可以跨过f找到g的</p><p>03.</p><pre><code>(function (x) {    delete x;    return x;})(1);A. 1B. nullC. undefinedD. Error</code></pre><p>答案：A delete运算符可以删除对象的属性；delete只是断开属性和宿主对象的联系，而不会去操作属性中的属性；delete只能删除自有属性，不能删除继承属性！</p><p>04.</p><pre><code>var y = 1,    x = y = typeof x;console.log(x);A. 1B. &quot;number&quot;C. undefinedD. &quot;undefined&quot; </code></pre><p>答案： D 注释：首先第一个坑就是第二行与第一行之间的逗号，所以第二行仍然是var的赋值运算，其相当于var x = y = typeof x ;大体就是说 先typeof x 然后赋值给y再然后赋值给x ,故覆盖上面的 y=1 ,typeof x 又找不到，故为’undefined’值</p><p>05.</p><pre><code>(function f(f) {    return typeof f();})(function () {    return 1;});A. &quot;number&quot;B. &quot;undefined&quot;C. &quot;function&quot;D. Error</code></pre><p>答案：A </p><p>06.</p><pre><code>var foo = {    bar: function () {        return this.baz;    },    baz: 1};(function () {    return typeof arguments[0]();})(foo.bar);A. &quot;undefined&quot;B. &quot;object&quot;C. &quot;number&quot;D. &quot;function&quot;</code></pre><p>答案：A 注释：下面是一个匿名函数，函数有返回值，是0号参数的typeof,然后找到foo.bar,发现foo.bar是一个函数，其返回值是this.baz,这个this指针明显指向了对象foo，可是犹豫foo.bar并没有执行，故也没有返回值，答案就明显是undefined了</p><p>07.</p><pre><code>var foo = {    bar: function () {        return this.baz;    },    baz: 1};typeof (f = foo.bar)();A. &quot;undefined&quot;B. &quot;object&quot;C. &quot;number&quot;D. &quot;function&quot;</code></pre><p>答案：A 注释：这一道题的foo.bar仍然没有执行，它只是把foo.bar又重新赋值给一个f 使之成为一个函数表达式，相当于 var f = function(){return this.baz;}而后面的执行方式相当于f(),所以里面的foo.bar并没有执行，此时的this显然指向了全局，而全局里面并没有baz这个属性，所以答案就是”undefined”了</p><p>本题涉及到的知识点：</p><p>对象的属性函数调用时，this指向该对象，如果是函数正常调用，this则指向全局</p><p>08.</p><pre><code>var f = (function f() {    return &quot;1&quot;;}, function g() {    return 2;})();typeof f;A. &quot;string&quot;B. &quot;number&quot;C. &quot;function&quot;D. &quot;undefined&quot;</code></pre><p>答案： B 这个题我也不太懂，大家就用排除法吧，首先typeof得出的值不可能是undefined，而里面有两个匿名函数，总要运行一个的吧，现在有两种比较能说通的解释，1.function g离（）这个运行比较近，所以就是B答案。2.运行后，后面的匿名函数覆盖了前面的匿名函数，所以是B答案。大家参考一下自己选择或验证吧。</p><p>09.</p><pre><code>var x = 1;if (function f() {}) {    x += typeof f;}console.log(x);A. 1B. &quot;1function&quot;C. &quot;1undefined&quot;D. NaN</code></pre><p>答案： C 注释：if（）里面是没有作用域的，js预解析会把里面的function(){}提到上面，作用于全局，相当于var f; f = function(){}这样一个没有内容的函数表达式，而typeof f就是’undefined’的字符串，x = x + ‘undefined’,任何值和字符串相加仍然是字符串，所以答案就是’1undefined’的字符串了。</p><p>本题涉及的知识点：</p><p>1.if里面的变量没有作用域限制，相当于全局变量</p><p>2.函数声明在预解析时会提到当前作用域的最顶端</p><p>3.任何值和字符串相加，其结果仍然是字符串</p><p>10.</p><pre><code>var x = [typeof x, typeof y][1];typeof typeof x;A. &quot;number&quot;B. &quot;string&quot;C. &quot;undefined&quot;D. &quot;object&quot;</code></pre><p>答案： B 注释：第一行相当于 x ＝ typeof y 其值为字符串类型的’undefined’;下面的typeof x 就变成了’string’,然后再来一个typeof ‘string’其结果仍然是’string’ </p><p>本题涉及知识点：</p><p>1.利用脚码调用数组中的属性</p><p>2.undefined的值是’undefined’的字符串，再经过几个typeof仍然是’string’</p><p>11.</p><pre><code>(function (foo) {    return typeof foo.bar;})({    foo: {        bar: 1    }});A、“undefined” B、“object” C、“number” D、Error</code></pre><p>答案： A 注释：题中的整体是一个匿名函数，有一个foo的参数，但是后面的（）中有一个大坑，就是foo:{bar:1}外面还有一个｛｝它是一个没有名字的对象，所以在上面的函数中是调用不到foo.bar的（无法跨级调用，若想调用，得在外面加一个对象名）<br>本题涉及的知识点：</p><p>1.｛｝是一个没有名字的对象，但是它的存在感还是很强的，千万不可以忽略他的存在</p><p>2.对象属性的调用必须逐级通过函数名调用，不可以跨越</p><p>12.</p><pre><code>(function f() {    function f() {        return 1;    }    return f();    function f() {        return 2;    }})();A、1 B、2 C、Error (e.g. “Too much recursion”) D、undefined</code></pre><p>答案：B 注释：本题的外面仍然是一个匿名函数，在函数内部的函数声明会在预解析中提到当前作用域的顶端，后面的function f 覆盖前面的function f 方法，所以上面的函数就变成如下</p><pre><code>(function f() {        function f() {            return 2;        }        return f();})();</code></pre><p>这样答案就明显是2了。</p><p>本题涉及知识点：</p><p>1.函数声明会在预解析中提到当前作用域的顶端</p><p>2.后面的重名函数会覆盖前面重名的函数</p><p>13.</p><pre><code>function f() {    return f;}new f() instanceof f;A、true B、false</code></pre><p>答案：B 注释：一般我们都会用一个变量来接住从f（）中new出的实例（对象），直接写new f（）指的就是f（）本身，它本身instanceof它本身，肯定是不可能的，所以是false<br>本题涉及的知识点：</p><p>1.return f;指返回值是函数本身；</p><p>2.new出的实例没有对象接住时，指的是创建对象的函数本身</p><p>3.A instanceof fn，指 A 是从fn中new出的一个实例。</p><p>14.</p><pre><code>with (function(x, undefined){}) length;A、1 B、2 C、undefined D、Error</code></pre><p>答案：B</p><p>下面是本文作者的寄语：</p><p>转载随意，但请带上本文地址：</p><p><a href="http://www.nowamagic.net/librarys/veda/detail/1593" target="_blank" rel="noopener">http://www.nowamagic.net/librarys/veda/detail/1593</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#javascript一些蛋疼的语法特性&lt;/p&gt;
+&lt;p&gt;##昨天晚上，百无聊赖，突然在百度工具栏里输入蛋疼二字，结果度娘引导我走入了这篇文章，看完之后，什么蛋啊节操啊的全都碎了一地，不信你看&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js-ecma2</title>
+    <link href="http://sundyfuther.github.io/2015/11/30/js-ecma2/"/>
+    <id>http://sundyfuther.github.io/2015/11/30/js-ecma2/</id>
+    <published>2015-11-30T01:04:53.000Z</published>
+    <updated>2015-12-28T10:05:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#ECMA第二篇</p><p>##</p><a id="more"></a><p>对象是属性的集合</p><p>读取当前对象的属性</p><p>（使用操作符.例如link.src和【‘’】此处的【‘’】不指数组,中括号别忘记加引号）用.操作符时不可以用-，要用驼峰命名或直接转换为【】使用；</p><p>对象没有length</p><p>for in语句  遍历对象语句 ，枚举语句</p><p>for(var i in obj){</p><p>}</p><p>for in 不要对数组循环，因为for in的顺序不是固定的，无序查询！</p><p>#所有的函数都有prototype属性 该属性是一个对象</p><p>##所有的对象都有一个 proto 属性</p><p>##假如这个函数没有任何属性的话 prototype对象 默认有个constructor属性</p><p>例如：fn(){}</p><p>var fn2 = new fn()  //从fn方法里面new出的一个实例，生成对象</p><p>prototype 原型 当前函数的原型</p><pre><code>__proto__指向创建当前对象的函数prototype (前面是双下划线)__proto__本意也是原型，指对象的原型</code></pre><p>//原型链//</p><p>//继承//</p><p>#this肯定指向一个对象本身</p><p>//在全局作用域下面调用this this指向global 也就是window</p><p>//函数声明 匿名函数 函数表达式 在全局中调用  this指向window</p><p>//new关键词作用的对象 this还是指向创建该对象</p><p>//当this当前的函数为对象的属性的时候，this指向该对象</p><p>//typeof 检测基本的数据类型</p><p>//instanceof 检测引用类型</p><p>//基本类型数据加属性不会报错  但是引用的话是undefined</p><p>//var声明的变量和function声明的函数会提到当前作用域的最顶端，而且function的声明是优先于var变量声明的（如果同时存在的话），所以提前声明后输出的值是function 然后代码往下执行a进行重新赋值了，故第二次输出是2.</p><p>//</p><p>this</p><pre><code>function JSClass(){    this.m_Text = &apos;division element&apos;;    this.m_Element.innerHTML = this.m_text;    this.m_Element = document.createElement(&apos;div&apos;);    this.m_Element.addEventListener(&apos;click&apos;,this.func);    //this.m_Element.onclick = this.func;}JSClass.prototype.render = function(){    document.body.appendChild(this.m_Element);}JSClass.prototype.func = function(){    alert(this.m_Text);}var jc ＝ new JSClass();jc.Render();jc.func();</code></pre><p>str.indexOf(‘索引字符’,’起始位置’)判断字符串中有没有字符,每次只返回第一个字符的下标值，没有找到字符的话返回-1；</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.indexOf(&apos;u&apos;));//输出1，说明n的第一个字符的下标是2console.log(str.indexOf(&apos;u&apos;,3));//输出6，说明从第三个字符开始往后查n的第一个字符的下标是6</code></pre><p>str.lastIndexOf(‘’) 从后面开始查找，但是字符的下标仍然是按照正序进行,每次返回找到的第一个字符的下标值,没有的话同样返回-1；</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.lastIndexOf(&apos;u&apos;));//输出16，说明从最后一个字符往前查，检索到的第一个u的字符    位置是16</code></pre><p>str.slice（position start,position end) 可以只有起始位置，打出来是从起始位置到字符串最后,如果是两个位置都有，则是从startposition开始数（endposition-startposition）个单位，其实是不包含endpositon所在位置上的字符；</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.slice(3,5));//输出：dy,从第3个字符开始往后检索两个，不包含第5个字符，也就是endposition位置上的字符</code></pre><p>substring（）提取相应的字符串//字符串长度是endposition-startpositon 不包含endposition</p><pre><code>同上slice（）方法</code></pre><p>split()方法用于把字符串分割成字符串数组 用原字符串中的字符做分割，如果不包含这个字符则返回原字符串的一个数组;</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.split(&apos;.&apos;));//输出：[&quot;sundyfuther&quot;, &quot;github&quot;, &quot;io&quot;]这样的字符串数组</code></pre><p>Unicode编码</p><p>charCodeAt(下标值) 返回下标位置的字符的unicode编码</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.charCodeAt(4));//输出：121具体对应的unicode值可以在相对应的unicode列表中查询</code></pre><p>charAt(下标值) 返回指定位置的字符</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.charAt(4));//输出&apos;y&apos;</code></pre><p>toLowerCase()把字符串转换为小写</p><pre><code>var str = &apos;SUNDYFUTHER.GITHUB.IO&apos;;console.log(str.toLowerCase());//输出&apos;sundyfuther.github.io&apos;</code></pre><p>toUpperCase()把字符串转换为大写</p><pre><code>var str = &apos;sundyfuther.github.io&apos;;console.log(str.toUpperCase());//输出：&apos;SUNDYFUTHER.GITHUB.IO&apos;5</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#ECMA第二篇&lt;/p&gt;
+&lt;p&gt;##&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于css</title>
+    <link href="http://sundyfuther.github.io/2015/11/28/cssNO1/"/>
+    <id>http://sundyfuther.github.io/2015/11/28/cssNO1/</id>
+    <published>2015-11-28T09:59:08.000Z</published>
+    <updated>2016-02-27T03:01:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p></p><h1 style="color:red;">css基础知识回顾</h1><br>层叠样式表（英语：Cascading Style Sheets，简写CSS），又称串样式列表、级联样式表、串接样式表、层叠样式表、階層式樣式表，一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言，由W3C定义和维护。目前最新版本是CSS2.1，为W3C的推荐标准。CSS3现在已被大部分现代浏览器支持，而下一版的CSS4仍在开发过程中。（引自维基百科）<p></p><a id="more"></a><p>1.css 样式由选择符和声明组成，而声明又由属性和值组成,选择器{属性:值}</p><p>2.声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔</p><p>3.注释方式 /<strong>/</strong></p><h2 style="color:darkgreen;">1、 css的引入方式：</h2>**<p></p><pre><code>① &lt;style&gt;&lt;/style&gt;标签引入 缺点：不利于复用，常用在单一页面开发② 标签内部引入方式（行间样式）用于修改别人的代码，有冲突的样式，标签内部的引入方式高于style标签的引入方式以及外部引入方式缺点：不利于维护，没有样式内容分离，代码陈余，不利于阅读优点：优先级高，不会被其他样式覆盖和影响③ 外部引入&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/....css&quot;/&gt;link是单标签有两个属性，rel：类型 stylesheet表示样式 type：关联文件的类型是css,href:表示路径。缺点：增加了一次请求优点：完全实现内容样式分离，模块儿化，利于复用④import url(reset.css)不常用（如果有相关自动化工具，不影响性能时可以使用）</code></pre><p><strong><h2 style="color:darkgreen;">2、 罗列一下css样式表中的元素：</h2></strong></p><h3 style="color:green;">宽高，背景，边框</h3> <pre><code>width: 00px;宽 (px是单位)height: 00px;高 (px是单位，以下类同)background-color:  ;背景颜色 (后面可以跟16进制颜色值和rgb颜色值或颜色的英文名，例如red)background-image:url(&quot;路径&quot;);background-repeat:值;值一般有三个repeat-x,repeat-y no-repeat来说明背景图片的平铺情况background-position:X轴位移,Y轴位移;后可以跟多少px值，也可以跟left,right,center,top,bottom;background:color image position 是否平铺;这是background的组合写法;border-color:颜色值;border-style:样式值;(solid实线，dashed虚线，dotted点线‘ie6不支持点线’)border-width:值;border:width color style; border 的组合写法;border-radius:值;值的类型可以是数字加px也可以是%比，一般50%表示圆；</code></pre><h3 style="color:green;">边距 分为外边距margin和内边距padding</h3><pre><code>内边距paddingpadding-top:;padding-right:;padding-bottom:;padding-left:;padding:T R B L ;padding的组合写法，成为TRBL法则；padding:10px; 上下左右的内边距都为10px；padding:10px 20px; 上下的内边距是10px,左右的内边距是20px；padding:10px 20px 30px; 上 左右 下；注意：没有设宽度时，自动默认为100%，宽度不定right不可设！内边距是可以显示背景的，影响盒子的宽度！外边距marginmargin-top:; margin-right:; margin-bottom:; margin-left:;margin:10px; margin:10px 20px; margin:10px 20px 30px;(同内边距)遵循TRBL法则；注意:外边距影响的是盒子的位置，不会影响宽高！子级的首元素margin-top会传递给父级，解决方法:用父级的padding-top或者子级加边框或者overflow</code></pre><h3 style="color:green;">盒模型（可以把我们的每一个标签都理解为一个盒子）</h3><pre><code>盒子的大小 ＝ border + padding + width/height ;盒子宽度 ＝ 左border + 左padding + width + 右padding + 右border;盒子高度 ＝ 上border + 上padding + height + 下padding + 下border ;</code></pre><p><img src="http://7xosew.com1.z0.glb.clouddn.com/%E6%A0%87%E5%87%86%E7%9B%92%E6%A8%A1%E5%9E%8B.JPG" alt="标准盒模型"><br><img src="http://7xosew.com1.z0.glb.clouddn.com/IE%E7%9B%92%E6%A8%A1%E5%9E%8B.JPG" alt="IE盒模型"></p><p>IE的盒模型同样也包括content，padding，border，margin，但是和标准浏览器唯一不同的地方就是content包含了border和padding。</p><h3 style="color:green;">浮动 float</h3><pre><code>float:left;向左浮  clear:left;清除左浮动   但浮动的窗口位置不动float:right;向右浮  clear:right;清除右浮动float:none; 不浮   clear:both; 将内容重新赋到父级中float会对父级和父级的同级以及下面样式产生影响，不可控（因为父级没有被撑开）行级标签浮动后可以设置宽高清楚浮动的方法 1.在父级增加overflow:hidden;                 2.在父级的同级写clearfix &lt;class=&quot;clearfix&quot;&gt;;                3.给父级加height(必须精确知道height);</code></pre><h3 style="color:green;">定位position:</h3><pre><code>position:relative;相对自身当前的位置移动left,right,top,bottom 可以对块级标签行级标签使用 不会改变标签属性 不对元素自身造成影响z-index表示当前的标签的层级  取值数字可以为负数  必须使用position属性才可以使用position:absolute; 绝对定位该情况可以设置宽高百分比 如果没有父级设置position:relative; 则当前标签从body可视区域为起点如果有父级标签设置position:relative; 则是以父级标签（可以是上上级 不一定是父级）位置为起点脱离文档流,改变标签属性 使之类似于inline-block</code></pre><h3 style="color:green;">关于文本css样式</h3><pre><code>font-size:值; 多少px用来表示字体的大小font-color:颜色值;font-style:值; 这个值一般为 normal正常  italic斜体font-family:值; 这个值为字体类型，可以跟多个字体类型font-weight:值; normal正常line-height:值;一般为父级的高度，用来垂直居中text-align:值;一般为center用来水平居中</code></pre><h3 style="color:green;">其他常用样式</h3><pre><code>opacity:0～1; 透明度 0为完全透明，1为完全不透明，就是正常显示状态filter:alpha(opacity=sqlN) sqlN的值为0到100 （IE下的透明度）clear:left right both; 清除 左 右 两边的浮动；overflow:hidden; 用来清楚浮动 隐藏溢出部分</code></pre><p><strong><h3 style="color:darkgreen;">3.css法则:同等优先级，后面的样式覆盖前面的样式</h3></strong></p><p>①标签选择器：直接作用于选择的标签元素，是一个集合，如 #div｛     ｝;  优先级为 1 </p><p>②ID选择器：直接作用于该名称的标签元素，ID名是唯一的，所以直对该名称的标签有效; 优先级 1000 永远都比标签选择器高</p><p>③【（派生）(层级选择器)父子级选择器】层级选择器 如 div h1{     }; 找到的是div下面所有的h1包括h1的子孙</p><p>④类选择器: 优先级100</p><pre><code>&lt;div class=&quot;header&quot;&gt;&lt;/div&gt;&lt;div class=&quot;header sex age&quot;&gt;&lt;/div&gt;</code></pre><p>这个时候选择器就可以用 .header{ } 这个选择起就叫类选择器，这样写的话选择器选择的就是上面<strong>两个div标签</strong>，class命名是可以重复的，也可以有很多个class名，像第二个div标签里面的名字不分顺序。</p><p>⑤群组选择器：body,#div,#lianjie,.sex{  } 由逗号隔开，表示这些标签全部选中 <strong>偏重于代码优化</strong></p><p>⑥通配选择器： <em>｛ ｝所有的标签都是该样式，优先级比标签还低，通常用来清除一些默认属性如 </em>｛margin:0px;｝这样就把所有标签的默认margin设置为0</p><p>⑦伪类选择器：:link :visited :hover :active :focus :target :lang</p><p>:link 超链接未被访问过</p><p>:visited 超链接被访问过</p><p>:hover 鼠标在元素上面</p><p>:active 鼠标在元素上按着</p><p><strong><h3 style="color:red">以上4个伪类选择器有一定的顺序，请不要随意改变</h3></strong></p><p>:focus 焦点在元素上</p><p>:target 元素被URL标记（css3新增的类）</p><p>:lang 向带有指定lang属性的元素添加样式</p><p>优先级总结</p><p>优先级：通配选择器（慎用） &lt; 标签选择器 &lt; 类选择器 &lt; ID选择器（少用） &lt; 层选择器 &lt; 群组选择器 &lt; 行间样式 &lt; ! important（直接跟在属性后面不用空格,例如：color:red!important;）</p><p><strong><h3 style="color:darkgreen;">4、reset样式表</h3></strong></p><p>①reset样式表的引入方式：等同于css的引入方式</p><pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;路径&quot;/&gt;</code></pre><p><strong>注意：该引入方式一般放在css引入方式的上边</strong></p><p>②作用：用于标签默认样式的初始化，方便开发人员控制元素！</p><p>③常用的reset样式表</p><pre><code>body{    margin:0px; 初始化body的margin为0    font-family:16px/1.5 Tohoam,Arila,san-serif; 初始化body的字体大小为16px，1.5倍的行高以及字体样式}ol,ul,dl,dd,dt{    margin:0px; 初始化ol，ul的外边距为0    padding:0px; 初始化ol，ul的内边距为0     list-style-type:none; 把ol，ul的默认样式去掉 ol前面的 1. 2. 3. 等等以及 ul前面的 . . .}image{    border:none; 去掉图片外面的边框(在IE下)}a{    text-decoration:none; 去掉链接的下划线}h1,h2,h3,h4,h5,h6,p{    margin:0px; 去掉标题以及P标签的margin（外边距）}</code></pre><p><strong><h3 style="color:darkgreen;">5.</h3></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;color:red;&quot;&gt;css基础知识回顾&lt;/h1&gt;&lt;br&gt;层叠样式表（英语：Cascading Style Sheets，简写CSS），又称串样式列表、级联样式表、串接样式表、层叠样式表、階層式樣式表，一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言，由W3C定义和维护。目前最新版本是CSS2.1，为W3C的推荐标准。CSS3现在已被大部分现代浏览器支持，而下一版的CSS4仍在开发过程中。（引自维基百科）&lt;p&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js-ecma</title>
+    <link href="http://sundyfuther.github.io/2015/11/28/js-ecma1/"/>
+    <id>http://sundyfuther.github.io/2015/11/28/js-ecma1/</id>
+    <published>2015-11-28T09:54:23.000Z</published>
+    <updated>2016-03-02T01:10:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ECMA基础知识回顾"><a href="#ECMA基础知识回顾" class="headerlink" title="ECMA基础知识回顾"></a><h3 style="color:red">ECMA基础知识回顾</h3></h2><a id="more"></a><p><strong>js的基础含义</strong></p><p>javascript : script脚本语言，继承在浏览器中的一种语言</p><p><strong>js分为三大模块：</strong></p><p>① ECMA核心语法 主要内容有 语法，类型，语句，关键字，保留字，操作符，对象…………几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 </p><p>② DOM 英文全称 Document(文档) Object(对象) Model(模型) 借助DOM.APL可以轻松自如的删除，添加，替换和修改任何节点  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;有一些兼容性问题；</p><p>③ BOM 浏览器对象模型；仅用来作用于窗口的指令，给了JS操作浏览器的能力；window；有许多兼容性问题</p><p>1、js的引入方法</p><pre><code>外部引入&lt;script type=&quot;text/javascript&quot; src=&quot;路径&quot;&gt;&lt;/script&gt;</code></pre><p>此种方法用在body的里面，标签的最后，主要是因为html文档是解释执行，从上往下。有效避免在JS文件里节点取不到，这跟引用框架JS文件一般放在head里的原理如出一辙</p><pre><code>内部引入&lt;script&gt; ……include statements …… &lt;/script&gt; （不常用）标签内使用：（不常用）</code></pre><p>2、script标签元素</p><pre><code>属性：src type defer async    src 和 type 只是在引入时用到    noscript用来判断浏览器是否支持 js 或者是否禁用 js    defer 延迟属性只对外部引用的js有效果，含义为立即加载js，但是文档加载完成之前不执行。    async属性 只对外部引入的js有效果，异步加载js没有顺序可言（ 不推荐 ）</code></pre><p>3、语法和标识符</p><pre><code>① 完全对大小写敏感，所以一定要区分大小写————驼峰式命名② 标识符 指变量，函数，属性，或参数的名字</code></pre><p>4、有特定作用的关键字不能作为标识符，也有一部分保留字尽量不要作为标识符！</p><p>5、变量</p><pre><code>var message // var 是关键字，用来声明和保存变量用的变量： 用来保存信息和数据的，声明的变量没有初始化，那么该变量的默认值是undefined        变量是有作用域的，var声明的变量是局部变量，没有var声明的叫全局变量。</code></pre><p>6、js最大的特点</p><pre><code>单线程运行</code></pre><p>7、获取节点：</p><pre><code>document.getElementById(&quot;&quot;)document.getElementByTagName(&quot;&quot;) 支持IE678及标准浏览器还有移动端，不太好用，document.getElementByClassName(&quot;&quot;)不支持IE678 至少IE9以上document.querySelector(&quot;&quot;)document.querySelectorAll(&quot;&quot;) //不支持IE678 仅支持标准浏览器和移动端，性能好</code></pre><p>8、数据类型：</p><p>① String 字符串类型</p><p>② Boolean 布尔类型</p><p>③ Number 数字类型</p><p>④ Null 空类型</p><p>⑤ Undefined undefined空类型</p><pre><code>数组超出长度后返回undefined当函数没有返回值时的默认返回值是undefined变量声明未定义时 其值为undefined</code></pre><p>⑥ Object 对象类型  值为对象或空 null</p><p>1、数据类型的检测 typeof</p><p>2、Array object null function 的关系和区别</p><p>3、什么是函数，参数，属性</p><p>4、函数和对象的关系</p><p>只有函数才可能定义块级作用域 或称为局部作用域</p><p>声明函数使用function关键字+函数名声明的函数</p><pre><code>function text(){}</code></pre><p>声明函数    就是使用function关键字  有函数名 没有赋值给一个函数</p><p>函数表达式  就是使用function关键字  没有函数名  赋值给一个变量的函数</p><p>匿名函数    就是使用function关键字  但是没有函数名的函数 也没有赋值给一个变量 用来保护变量，因为作用域不一样，全局变量和局部变量不冲突！用来赋给事件，作为事件触发的</p><pre><code>var i = function(){    此种写法称为函数表达式}</code></pre><p>一个是声明变量（函数） 一个是匿名函数  函数表达式</p><p>三者的区别</p><pre><code>function text(){    var j = function(){        console.log(&apos;123&apos;)    } //()这样表示立即执行    function(){        console.log(&apos;456&apos;)    } //()这样会报错 ，仔细比较两者的区别}text();函数表达式可以使用（）操作符立即执行；函数声明不可以var j ＝ function（）｛     console.log（‘哈哈哈’）；｝也可以（function（）｛｝这个括号用来把函数变成一个函数表达式）（立即调用）//这样的调用方法简写成（）（）；全局变量可以在任何地方访问函数内的变量，对外部是不可见的函数内部可以访问外部函数的变量    （function(num){        var i = num        function aaa(){            console.log(i);        }                                内部函数可以访问上层函数的变量        console.log(i);        aaa();    }）(2);    for(var i = 0 ; i&lt; 10 ; i++){        (function(i){            function aaa(){                console.log(i);            }        })(i);    }</code></pre><p>举例：</p><pre><code>&lt;!doctype html&gt;&lt;html&gt;&lt;head lang = &quot;en&quot;&gt;    &lt;meta charset=&quot;utf-8&quot;/&gt;    &lt;title&gt;逻辑与规则&lt;/title&gt;    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/js99.css&quot;/&gt;&lt;/head&gt;&lt;body&gt;    &lt;ul&gt;        &lt;li&gt;0&lt;/li&gt;        &lt;li&gt;1&lt;/li&gt;        &lt;li&gt;2&lt;/li&gt;        &lt;li&gt;3&lt;/li&gt;        &lt;li&gt;4&lt;/li&gt;        &lt;li&gt;5&lt;/li&gt;        &lt;li&gt;6&lt;/li&gt;        &lt;li&gt;7&lt;/li&gt;        &lt;li&gt;8&lt;/li&gt;        &lt;li&gt;9&lt;/li&gt;    &lt;/ul&gt;    &lt;script type=&quot;text/javascript&quot; src=&quot;js/js99.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>相关javascript代码</p><pre><code>var arr = document.querySelectorAll(&quot;ul li&quot;);for (var i = 0; i &lt; arr.length; i++) {    (function(i){        arr[i].onclick = function(){            console.log(i);        }    })(i)};</code></pre><p>其结果等同于下面js代码</p><pre><code>var arr = document.querySelectorAll(&quot;ul li&quot;);for (var i = 0; i &lt; arr.length; i++) {        arr[i].index=i ;        arr[i].onclick = function(){            console.log(this.index);        }};</code></pre><p>1、javascript预解析和作用域</p><p>2、执行运算符（）的运用</p><p>3、return的用法  函数参数的解析</p><p>全局</p><pre><code>function fn(){    console.log(&apos;111&apos;)}console.log(fn()); 运行结果：111，undefined 每一个函数都有一个默认返回值undefined</code></pre><p>最后利用今天所学知识做了一个关于计算加减乘除的方法：（如下）</p><pre><code>function computer(){    var lth = arguments.length-1 ;    //console.log(lth);    if (arguments[lth]==&apos;+&apos;) {        for (var i = 1 ; i &lt; arguments.length-1 ; i++) {            arguments[0] += arguments[i] ;        }        console.log(arguments[0]);    }else if( arguments[lth] == &apos;-&apos;){        for (var i = 1; i &lt; arguments.length-1; i++) {            arguments[0] -= arguments[i] ;        }        console.log(arguments[0]);    }else if (arguments[lth] == &apos;*&apos;) {        for (var i = 1; i &lt; arguments.length-1 ; i++) {            arguments[0] *= arguments[i] ;        }        console.log(arguments[0]);    }else if (    arguments[lth] == &apos;/&apos;) {        for (var i = 1; i &lt; arguments.length-1 ; i++) {            arguments[0] /= arguments[i] ;        }        console.log(arguments[0]);    }}computer(1,2,3,5,6,8,&apos;+&apos;);computer(15,2,2,3,5,3,&apos;-&apos;);computer(2,5,2,5,2,5,&apos;*&apos;);computer(200,2,2,5,&apos;/&apos;);</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;ECMA基础知识回顾&quot;&gt;&lt;a href=&quot;#ECMA基础知识回顾&quot; class=&quot;headerlink&quot; title=&quot;ECMA基础知识回顾&quot;&gt;&lt;/a&gt;&lt;h3 style=&quot;color:red&quot;&gt;ECMA基础知识回顾&lt;/h3&gt;&lt;/h2&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JS综合面试题</title>
+    <link href="http://sundyfuther.github.io/2015/11/28/js%E7%BB%BC%E5%90%88%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://sundyfuther.github.io/2015/11/28/js综合面试题/</id>
+    <published>2015-11-28T03:34:38.000Z</published>
+    <updated>2016-03-01T11:47:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 style="color:red">变量定义提升、this指针指向、运算符优先级、原型、继承、全局变量污染、对象属性及原型属性优先级</h3><a id="more"></a><p><strong>题目：</strong></p><pre><code>function Foo(){    getName = function(){        alert(1);    }    return this;}Foo.getName = function(){    alert(2);}Foo.prototype.getName = function(){    alert(3);}var getName = function(){    alert(4);}function getName(){    alert(5);}//请写出以下运行结果Foo.getName();getName();Foo().getName();getName();new Foo.getName();new Foo().getName();new new Foo().getName();</code></pre><p>前两问的答案就显而易见了，关键是后面几个，若没有良好的JS功底不好回答。首先我们先按照浏览器的执行顺序解析一下题目（把变量定义按照优先级顺序提前）如下：</p><pre><code>function Foo(){    getName = function(){        alert(1);    }    return this;}function getName(){    alert(5);}var getName;Foo.getName = function(){    alert(2);}Foo.prototype.getName = function(){    alert(3);}getName= function(){    alert(4);}</code></pre><p>好了，我们的执行顺序已经和浏览器一样了，这其中要注意：函数声明的优先级是优于变量声明的。</p><h3 style="color:darkblue">第一问</h3><pre><code>1.Foo.getName()  //显然这里的执行的是Foo的自有属性，并不是继承属性，因为只有在没有这个自有属性的时候，才会沿着原型链往上找，因此答案是2，而不是3</code></pre><h3 style="color:darkblue">第二问</h3><pre><code>2.getName()  //把上面题目的书写顺序改为JS正常执行的顺序后，可以看到最后一个匿名函数覆盖了上面的getName，故答案是4</code></pre><h3 style="color:darkblue">第三问</h3><pre><code>3.Foo().getName()  //这里是先把Foo执行了一遍，根据上面的函数，Foo()直接调用应返回window对象，最后的调用表达式就变成了window.getName(),</code></pre><h3 style="color:darkblue">第四问</h3><h3 style="color:darkblue">第五问</h3><h3 style="color:darkblue">第六问</h3><h3 style="color:darkblue">第七问</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 style=&quot;color:red&quot;&gt;变量定义提升、this指针指向、运算符优先级、原型、继承、全局变量污染、对象属性及原型属性优先级&lt;/h3&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>first page about html</title>
+    <link href="http://sundyfuther.github.io/2015/11/25/html%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/"/>
+    <id>http://sundyfuther.github.io/2015/11/25/html基础知识回顾/</id>
+    <published>2015-11-25T12:49:20.000Z</published>
+    <updated>2016-02-25T12:19:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 style="color:red">HTML基础知识~常用标签</h1><a id="more"></a><p><strong><span style="color:green;font-size:18px">要进入前端开发工作岗位，需要掌握的基础编码知识：<span></span></span></strong></p><p>1）、 html（结构或内容），英文全称Heyper Markup Larguage.翻译后为超文本标记语言。</p><p>2）、 css（样式） Cascading Style Sheets.</p><p>3）、 Js(行为)  Javascript</p><p>《正文》</p><p><strong>1、 html 文档标准</strong></p><p>①、 所有的的标签属性命名都要小写，属性值用双引号；</p><p>②、 html文档包括两部分 head 和 body ；</p><p>③、 head必须有title和编码格式；</p><p>④、 所有可见的内容都要放在body里面。</p><p>html文件的基本格式：（不包括docutype声明，docutype只是告诉浏览器我是一个html文件请按照html文件及对应版本解析）</p><p>即： </p><pre><code>&lt;html&gt;     &lt;!--html标签为根标签--&gt;    &lt;head&gt;        &lt;title&gt;&lt;/title&gt;    &lt;/head&gt;    &lt;body&gt;(可视内容)&lt;/body&gt;&lt;html&gt;</code></pre><p>如上面的文档结构，每一个可视内容都要用一个标签包住如：</p><pre><code>&lt;div&gt;我是一个div标签&lt;/div&gt;</code></pre><p><strong>2、常用标签</strong></p><pre><code>&lt;html&gt;&lt;/html&gt; &lt;!--创建一个HTML文档，文档的根标签--&gt;&lt;head&gt;    &lt;!--设置文档标题和其它在网页中不显示的信息--&gt;    &lt;meta charset=&quot;utf-8&quot;/&gt; &lt;!--meta提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器                                （如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。--&gt;                                  &lt;!--charset为申明编码解析格式--&gt;     &lt;title&gt;&lt;/title&gt; &lt;!--设置文档的标题--&gt;    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;路径&quot;/&gt; &lt;!--定义一个链接和源之间的相互关系 常用来引入css样式表◆rel=&quot;&quot;发送链接的类型--&gt;    &lt;style&gt; 内嵌样式 &lt;/style&gt;    &lt;script type=&quot;text/javascript&quot; src=&quot;路径&quot;&gt;&lt;/script&gt;    &lt;script&gt; 内嵌js代码块儿 &lt;/script&gt;&lt;/head&gt; &lt;body&gt;    &lt;div&gt;&lt;/div&gt; &lt;!--用来排版大块html段落,没有任何语意--&gt;    &lt;span&gt;&lt;/span&gt; &lt;!--没有任何语意的行级标签--&gt;    &lt;h1&gt;&lt;/h1&gt; 最大的标题到&lt;h6&gt;&lt;/h6&gt; 最小的标题，从1到6依次降级 &lt;!--有默认的margin--&gt;    &lt;ol&gt;&lt;/ol&gt; &lt;!--创建一个标有数字的列表 即有序列表，有默认的margin和padding--&gt;    &lt;ul&gt;&lt;/ul&gt; &lt;!--创建一个标有圆点的列表 即无序列表，有默认的margin和padding--&gt;    &lt;li&gt;&lt;/li&gt; &lt;!--放在每个列表项之前,若在&lt;ol&gt;&lt;/ol&gt;之间则每个列表项加上一个数字,    若在&lt;ul&gt;&lt;/ul&gt;之间则每个列表项加上一个圆点　--&gt; 　    &lt;dl&gt;&lt;/dl&gt; &lt;!--自定义列表--&gt;    &lt;dt&gt;&lt;/dt&gt; &lt;!--放在每个定义术语词前--&gt;    &lt;dd&gt;&lt;/dd&gt; &lt;!--放在每个定义之前dt元素内容做出解释--&gt;    &lt;a href=&quot;url&quot; title=&quot;提示链接信息&quot; target=&quot;是否再打开新窗口&quot;&gt;&lt;/a&gt; &lt;!--创建超文本链接--&gt;    &lt;img src=&quot;图片地址&quot; alt=&quot;指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；&quot; title=&quot;提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)&quot;/&gt;    &lt;p&gt;&lt;/p&gt; &lt;!--创建一个段落 有默认margin--&gt;    &lt;em&gt;&lt;/em&gt; &lt;!--强调文本(斜体)--&gt;    &lt;strong&gt;&lt;/strong&gt; &lt;!--强调加重文本(加粗文本)--&gt;    &lt;big&gt;&lt;/big&gt; &lt;!--字体加大--&gt;    &lt;small&gt;&lt;/small&gt; &lt;!--字体缩小--&gt;    &lt;address&gt;&lt;/address&gt;  &lt;!--为页面加入地址信息 H5新增标签--&gt;    &lt;code&gt; var i = 0; &lt;/code&gt; &lt;!--在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了--&gt;    &lt;pre&gt;&lt;/pre&gt; &lt;!--预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签--&gt;    &lt;sup&gt;&lt;/sup&gt; &lt;!--上标字--&gt;    &lt;sub&gt;&lt;/sub&gt; &lt;!--下标字--&gt;    &lt;/br&gt; &lt;!--换行标签  没有样式--&gt;    &lt;/hr&gt; &lt;!--分割线标签 --&gt;     &lt;table&gt;&lt;/table&gt;  &lt;!--tbody这个标签基本上不怎么用了，html会自动添加 --&gt;    &lt;tr&gt;&lt;/tr&gt;  &lt;!--表格的一行--&gt;    &lt;th&gt;&lt;/th&gt;  &lt;!--表格的头部的一个单元格，表格表头--&gt;    &lt;td&gt;&lt;/td&gt;  &lt;!--表格的一个单元格--&gt;     &lt;!--caption 表格标题    summary属性 表格的摘要 &lt;table summary=&quot;哈哈哈 红红红&quot;&gt;&lt;/table&gt;　    action属性 输入的数据被传送到的地址,比如一个PHP页面(test.php)。    method属性 数据传送的方式（get/post）--&gt;    &lt;iframe src=&quot;引入的路径&quot;&gt;&lt;/iframe&gt;&lt;/body&gt;</code></pre><p><strong><span style="color:green;font-size:18px">3、通过以上标签的简单介绍，细心的同学不难发现所有的标签都需要/来闭合，并且标签的样式有两种：<span></span></span></strong></p><p>1）、单标签，通俗一点就是只有一个&lt;&gt;包裹的，他的闭合方式是&lt;……/&gt; ；</p><p>2）、双标签，那不就是有两个&lt;&gt;包裹的，他的闭合方式是&lt;……&gt;&lt;/……&gt; 刚学的时候我老是犯错误把双标签的闭合写成这样&lt;……&gt;&lt;……/&gt; 结果html是不提示错误的，我又找不到错误，常常因为这样的找错误耽搁两个小时,所以粗心的同学注意了，这对于初学者是个<strong>大坑</strong>；</p><p>除了样式上的单双标签之外，还有行级和块级之分，也有不少前辈和老师称行级为内联块或内联元素，也有叫行内元素的，其实只是一个称谓罢了，大家不用太过纠结。</p><p><strong><span style="color:green;font-size:16px">行级元素的特点：<span></span></span></strong></p><p>1）、 默认排列在一行 ；</p><p>2）、 内容撑开宽度；</p><p>3）、 不可以设置宽高（如果非要设置，可以在css样式里面加display:block;或display:inline-block;或position属性;或float属性等）</p><p>4）、 margin（外边距）只对左右有用，上下没有用。</p><p><strong><span style="color:green;font-size:16px">块级元素的特点：</span></strong></p><p>1）、 默认独占一行，（总是另起一行开始）；</p><p>2）、 宽高与内容无关，支持css的所有样式；</p><p><strong><span style="color:green;font-size:16px">当然还有其他的一些例如表格，列表项等样式，其实并没有什么特别的地方，就不在赘述了</span></strong></p><p>＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 style=&quot;color:red&quot;&gt;HTML基础知识~常用标签&lt;/h1&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo安装及初级使用篇</title>
+    <link href="http://sundyfuther.github.io/2015/11/25/hexo%E5%AE%89%E8%A3%85%E5%8F%8A%E5%88%9D%E7%BA%A7%E4%BD%BF%E7%94%A8%E7%AF%87/"/>
+    <id>http://sundyfuther.github.io/2015/11/25/hexo安装及初级使用篇/</id>
+    <published>2015-11-25T12:49:20.000Z</published>
+    <updated>2015-11-28T03:42:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#hexo安装及初级使用篇</p><a id="more"></a><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><p>来段开场</p><p>开篇之前先来说说什么是hexo?这个东西可以做什么。</p><p>最近一段时间在考虑写博客的事情，因为之前有些使用百度空间和一些其他类似博客平台的经历，想自己搭建个私人博客平台，机缘巧合吧，在学习nodeJS的时候看到了关于hexo的介绍。心动之后立马尝试，原来搭建博客可以这么方便快捷。</p><p>hexo是一个基于Node.js的静态博客程序。是静态的，在这里如果对博客功能需求大的话，hexo可能满足不了你。</p><p>怎样搭建hexo博客</p><p>先说说开始搭建之前需要准备哪些东西。括号里是地址说明：</p><pre><code>1.Node.js2.Git （mac系统推荐通过Xcode安装，或者通过homebrew3.github 账号一枚</code></pre><p>判断node安装成功可以在命令行里输入：</p><pre><code>node -v</code></pre><p>如果出现v+数字组合表示的当前node版本号就表示成功啦。</p><p>判断Git安装成功可以在命令行里输入：</p><pre><code>git --version </code></pre><p>出现 git version 数字序列的版本号就表示安装成功啦。</p><p>准备工作就绪之后，就开始我们hexo搭建吧。</p><p>首先在命令行里输入命令：</p><pre><code>hexo install -g hexo</code></pre><p>假如安装过程中有出现报错字样的话，还有类似Administrator等英文字眼的可以尝试下用sudo来提升安装权限：</p><pre><code>sudo hexo install -g hexo</code></pre><p>执行成功之后在命令行里输入：</p><pre><code>hexo version</code></pre><p>可以看到hexo相关信息表示安装成功。</p><p>接下来我们要做的事就是新建一个文件夹，文件夹的名称随意，最好和博客相关，比如superTest。然后通过命令行进入该文件夹：</p><pre><code>cd superTest</code></pre><p>当前的文件夹是空的，之后执行命令行：</p><pre><code>hexo init</code></pre><p>执行成功之后superTest文件夹会多出很多文件和文件夹出来。如图：</p><pre><code>初始化blog文件夹</code></pre><p>初始化superTest文件夹成功后，该文件夹里面的内容。如图：</p><p>之后按照命令行提示输入命令：</p><pre><code>npm install</code></pre><p>安装过程中会出现警报，报错之类的提示，不要急，不要慌。看到下图这个样子就没事，忽略即可：</p><p>文件夹里多出个node_modules文件夹</p><p>成功了！</p><p>接下来在命令行输入两个命令：</p><pre><code>hexo ghexo server</code></pre><p>之后看到这样的字样就表示hexo博客本地服务启动成功了。点击这个地址就可以预览了。</p><p>INFO  Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="noopener">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code>$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code>$ hexo server</code></pre><p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code>$ hexo generate</code></pre><p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code>$ hexo deploy</code></pre><p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><pre><code>文章原帖：[hanmingyang.github.io/]</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#hexo安装及初级使用篇&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://sundyfuther.github.io/2015/11/25/%E3%80%82%E3%80%82%E3%80%82%E3%80%82%E3%80%82/"/>
+    <id>http://sundyfuther.github.io/2015/11/25/。。。。。/</id>
+    <published>2015-11-25T08:49:11.000Z</published>
+    <updated>2016-02-27T01:09:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
